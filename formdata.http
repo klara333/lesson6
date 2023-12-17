@@ -1,0 +1,13 @@
+ POST http://localhost:3000/upload/formdata
+
+ Content-Type: multipart/form-data; boundary=ImageBoundary
+
+--ImageBoundary
+Content-Disposition: form-data; name="image"; fileName="index.jpg"
+Content-Type: image/png
+
+ < ./index.jpg
+--ImageBoundary--
+####
+curl -X POST -H "Content-Type: multipart/form-data" -F "image=@./index.jpg" http://localhost:3000/upload/formdata
+
